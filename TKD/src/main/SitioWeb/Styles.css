@@ -1,0 +1,48 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+nav {
+    background-color: cornflowerblue;
+    display: flex;
+}
+
+h1, main {
+    margin-left: 1%;
+    width: auto;
+}
+
+button:hover {
+    background-color: #f72436;
+}
+
+button {
+    border: 0;
+    padding: 17px;
+    background-color:rgb(230, 230, 230);
+}
+
+#volver {
+    display: flex;
+    margin-left: 130px;
+    margin-top: -50px;
+}
+
+input {
+    display: block;
+    margin-bottom: 7px;
+}
+/* Estilos para la tabla de detalles */
+th{
+    background-color: cornflowerblue;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 1px;
+}
+tr {
+    background-color: #333;
+}
