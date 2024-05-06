@@ -25,7 +25,7 @@ function registrarAlumno() {
     };
 
     // Realizar una solicitud POST al servicio backend
-    fetch("http://localhost:8080/alumno/", {
+    fetch("http://localhost:8080/alumno", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -46,10 +46,14 @@ function registrarAlumno() {
         });
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    obtenerDetalles();
+});
 // Función para obtener los detalles de los alumnos
 function obtenerDetalles() {
+    console.log("hola")
     // Realizar una solicitud GET al servicio backend
-    fetch("http://localhost:8080/api/alumnos")
+    fetch("http://localhost:8080/alumnos")
         .then(response => response.json())
         .then(data => {
             // Obtener la tabla donde se mostrarán los detalles
@@ -75,7 +79,7 @@ function obtenerDetalles() {
 
             data.forEach(alumno => {
                 const fila = document.createElement("tr");
-                const columnas = [alumno.id, alumno.nombre, alumno.apellido, alumno.email, alumno.edad, alumno.genero, alumno.direccion, alumno.telefono];
+                const columnas = [alumno.id, alumno.nombres, alumno.apellidos, alumno.genero, alumno.edad, alumno.peso, alumno.estatura, alumno.telefono, alumno.gradoCinta, alumno.fechaIngreso];
 
                 columnas.forEach(valor => {
                     const td = document.createElement("td");
