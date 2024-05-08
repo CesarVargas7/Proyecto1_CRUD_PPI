@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/alumno")
+@CrossOrigin(origins = "*")
 public class AlumnoController {
     @Autowired
     AlumnoService alumnoService;
@@ -20,7 +21,7 @@ public class AlumnoController {
     }
 
     //post
-    @PostMapping
+    @PostMapping(path ="/add")
     public AlumnoModel saveStudent(@RequestBody AlumnoModel alumno) {
         return alumnoService.saveStudent(alumno);
     }

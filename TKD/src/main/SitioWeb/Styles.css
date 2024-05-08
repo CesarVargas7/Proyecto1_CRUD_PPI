@@ -43,6 +43,6 @@ th{
     margin: 0px;
     border-radius: 1px;
 }
-tr {
-    background-color: #333;
+td {
+    background-color: lightgray;
 }

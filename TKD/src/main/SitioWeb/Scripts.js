@@ -25,7 +25,7 @@ function registrarAlumno() {
     };
 
     // Realizar una solicitud POST al servicio backend
-    fetch("http://localhost:8080/alumno", {
+    fetch("http://localhost:8080/alumno/add", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -46,18 +46,15 @@ function registrarAlumno() {
         });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    obtenerDetalles();
-});
 // Función para obtener los detalles de los alumnos
 function obtenerDetalles() {
     console.log("hola")
     // Realizar una solicitud GET al servicio backend
-    fetch("http://localhost:8080/alumnos")
+    fetch("http://localhost:8080/alumno")
         .then(response => response.json())
         .then(data => {
             // Obtener la tabla donde se mostrarán los detalles
-            const tabla = document.getElementsByTagName("table");
+            const tabla = document.getElementsByTagName("table")[0];
 
             // Limpiar la tabla
             tabla.innerHTML = "";
@@ -68,27 +65,27 @@ function obtenerDetalles() {
             const encabezado = ["ID", "Nombre", "Apellido", "Genero", "Edad", "Peso", "Estatura", "Teléfono", "Grado", "Fecha de Ingreso"];
             const filaEncabezado = document.createElement("tr");
 
-            encabezado.forEach(campo => {
+            for(campo of encabezado) {
                 const th = document.createElement("th");
                 th.textContent = campo;
                 filaEncabezado.appendChild(th);
-            });
+            }
 
             thead.appendChild(filaEncabezado);
             tabla.appendChild(thead);
 
-            data.forEach(alumno => {
+            for(alumno of data) {
                 const fila = document.createElement("tr");
                 const columnas = [alumno.id, alumno.nombres, alumno.apellidos, alumno.genero, alumno.edad, alumno.peso, alumno.estatura, alumno.telefono, alumno.gradoCinta, alumno.fechaIngreso];
 
-                columnas.forEach(valor => {
+                for(valor of columnas) {
                     const td = document.createElement("td");
                     td.textContent = valor;
                     fila.appendChild(td);
-                });
+                }
 
                 tbody.appendChild(fila);
-            });
+            }
 
             tabla.appendChild(tbody);
         })
