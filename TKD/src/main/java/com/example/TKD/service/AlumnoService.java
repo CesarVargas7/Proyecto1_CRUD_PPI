@@ -32,4 +32,13 @@ public class AlumnoService {
     public ArrayList<AlumnoModel> findByNombres(String nombres) {
         return  alumnoRepository.findByNombres(nombres);
     }
+
+    // Eliminar un usuario
+    public void deleteStudent(Long id) throws Exception {
+        if(alumnoRepository.existsById(id)) {
+            alumnoRepository.deleteById(id);
+        } else {
+            throw new Exception("El alumno con el ID " + id + " no existe.");
+        }
+    }
 }

@@ -17,4 +17,6 @@ public interface AlumnoRepository extends CrudRepository<AlumnoModel, Long> {
     public abstract ArrayList<AlumnoModel> findByNombres(String nombres);
 
     // Eliminar por ID
+    public abstract void deleteById(Long id);
+
 }

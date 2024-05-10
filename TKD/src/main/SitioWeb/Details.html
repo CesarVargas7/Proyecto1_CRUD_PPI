@@ -1,38 +1,63 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles de alumnos</title>
-    <link rel="stylesheet" href="Styles.css">
-</head>
-<body>
-<nav><h1>Gestor de alumnos TKD</h1></nav>
-<main>
-    <h3>Detalles de alumnos</h3>
-    <table>
-        <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Género</th>
-            <th>Edad</th>
-            <th>Peso</th>
-            <th>Estatura</th>
-            <th>Número de teléfono</th>
-            <th>Grado de cinta</th>
-            <th>Fecha de ingreso</th>
-        </tr>
-        </thead>
-        <tbody>
-        <!-- Aquí se mostrarán los datos de la base de datos -->
-        </tbody>
-    </table>
-    <br>
-    <button onclick="location.href='Index.html';">Volver al inicio</button>
-</main>
-<script src="Scripts.js"></script>
-<script>
-    obtenerDetalles();
-</script>
-</body>
-</html>
+    <!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Detalles de alumnos</title>
+        <link rel="stylesheet" href="Styles.css">
+    </head>
+    <body>
+    <nav><h1>Gestor de alumnos TKD</h1></nav>
+    <main>
+        <h3>Detalles de alumnos</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Género</th>
+                <th>Edad</th>
+                <th>Peso</th>
+                <th>Estatura</th>
+                <th>Número de teléfono</th>
+                <th>Grado de cinta</th>
+                <th>Fecha de ingreso</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Aquí se mostrarán los datos de la base de datos -->
+            </tbody>
+        </table>
+        <br>
+        <button onclick="location.href='Index.html';">Volver al inicio</button>
+
+        <div id="contenedorEditar" style="display: none;">
+            <h2>Editar Alumno</h2>
+            <form id="formEditar">
+                <input type="text" id="id" class="form-control" placeholder="ID">
+                <input type="text" id="nombreC" class="form-control" placeholder="Nombre">
+                <input type="text" id="apellidoC" class="form-control" placeholder="Apellido">
+                <input type="text" id="generoC" class="form-control" placeholder="Genero">
+                <input type="text" id="edadC" class="form-control" placeholder="Edad">
+                <input type="text" id="pesoC" class="form-control" placeholder="Peso">
+                <input type="text" id="estaturaC" class="form-control" placeholder="Estatura">
+                <input type="text" id="telefonoC" class="form-control" placeholder="Número de teléfono">
+                <input type="text" id="gradoCintaC" class="form-control" placeholder="Grado de cinta">
+                <input type="text" id="fechaIngresoC" class="form-control" placeholder="Fecha de Ingreso">
+                <button type="button" onclick="confirmarEdicion();">Confirmar Edición</button>
+            </form>
+        </div>
+
+        <div id="contenedorEliminar" style="display: none;">
+            <h2>Confirmar Eliminación</h2>
+            <p>Ingrese el ID del alumno para confirmar la acción</p>
+            <input type="text" id="confirmarID" class="form-control" placeholder="ID">
+            <button type="button" onclick="confirmarEliminacion()">Aceptar</button>
+        </div>
+
+    </main>
+    <script src="Scripts.js"></script>
+    <script>
+        obtenerDetalles();
+    </script>
+    </body>
+    </html>
